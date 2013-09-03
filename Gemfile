@@ -6,8 +6,8 @@ gem 'rails', '4.0.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-gem 'devise', '~> 3.0.1'
-gem 'simple_form'
+gem 'devise'
+gem 'simple_form', '3.0.0.rc'
 
 # Use sqlite3 as the database for Active Record
 group :production do
