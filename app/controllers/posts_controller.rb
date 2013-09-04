@@ -1,10 +1,14 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  # Must authenticate user first before actions except index action.
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
+    #to show only current_user Posts
+    #@posts = current_user.posts.all
   end
 
   # GET /posts/1
@@ -14,17 +18,20 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @post = current_user.posts.new
+    #@post = Post.new
   end
 
   # GET /posts/1/edit
   def edit
+    @post = current_user.posts.find(params[:id])
   end
 
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
+    #@post = Post.new(post_params)
 
     respond_to do |format|
       if @post.save
@@ -40,6 +47,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @post = current_user.posts.find(params[:id])
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -54,6 +62,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
+    @post = current_user.posts.find(params[:id])
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url }
