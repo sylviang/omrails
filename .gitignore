@@ -20,3 +20,7 @@ doc/
 .DS_Store
 .project
 .idea
+.
+
+# Ignore Paperclip uploaded files
+/public/system
