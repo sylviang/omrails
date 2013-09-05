@@ -9,6 +9,7 @@ gem 'turbolinks'
 gem 'devise'
 gem 'simple_form', '3.0.0.rc'
 gem 'paperclip', github: 'thoughtbot/paperclip', branch: 'rails-4'
+gem 'faker'
 
 # Use sqlite3 as the database for Active Record
 group :production do
