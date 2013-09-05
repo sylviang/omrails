@@ -15,4 +15,12 @@ class Post < ActiveRecord::Base
 		# super make sure that any functionality that already define also will happen
 	end
 
+	def self.search(search)
+  if search
+    where('description LIKE ?', "%#{search}%")
+  else
+    scoped
+  end
+end
+
 end

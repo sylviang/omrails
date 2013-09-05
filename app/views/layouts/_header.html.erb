@@ -25,9 +25,18 @@
           <% end %>
         </ul>
       </div>
-
       <div class="row">
-        <div class="span6 offset4">
+        <div class="span9"></div>
+      </div>
+      <div class="row">
+        <div class="span4 offset3">
+          <%- #tag is use for more generic ones. w/o is for model attributes -%>
+          <%= form_tag posts_path, method: 'get' do %>
+            <%= text_field_tag(:search, params[:search]) %>
+            <%= submit_tag("Search", :name => nil ) %>
+          <% end %>
+        </div>
+        <div class="span2">
           <%= link_to 'Ask', new_post_path %>
         </div>
       </div>
