@@ -80,6 +80,6 @@ class PostsController < ApplicationController
     # This is the Rails 4 strong parameters instead of Rails 3 attributes_accessible
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:description, :image)
+      params.require(:post).permit(:description, :image, :image_remote_url, :video_remote_url)
     end
 end

@@ -1,5 +1,10 @@
 <div class="box">
-	<%= link_to (image_tag post.image(:thumb)), post %>
+	<%- # link_to (image_tag post.image(:thumb)), post -%>
+	<% if post.image.blank? %>
+	<%= raw(youtube_embed(post.video_remote_url)) %>
+	<% else %>
+		<%= link_to (image_tag post.image), post %>
+	<% end %>
 	<div class="description">
 		"<%= post.description %>"
 	</div>
