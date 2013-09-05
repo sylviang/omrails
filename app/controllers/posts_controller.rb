@@ -10,6 +10,12 @@ class PostsController < ApplicationController
     #@posts = Post.all
     #to show only current_user Posts
     #@posts = current_user.posts.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json {render json: @posts}
+      format.js #index.js.erb
+    end
   end
 
   # GET /posts/1
