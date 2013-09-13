@@ -15,6 +15,7 @@ gem 'bootstrap-will_paginate'
 gem 'jquery-ui-rails'
 gem 'rack-mini-profiler'
 gem 'redis'
+gem 'aws-sdk'
 
 # Use sqlite3 as the database for Active Record
 group :production do

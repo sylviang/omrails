@@ -1,4 +1,4 @@
-Omrails::Application.configure do
+ Omrails::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -80,4 +80,15 @@ Omrails::Application.configure do
 
   #devise setup. In production, :host should be set to the actual host of your application.
   config.action_mailer.default_url_options = { :host => 'powerful-basin-4428.herokuapp.com' }
+
+  #Configuring Amazon s3 for paperclip file uploads
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['AWS_BUCKET'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
+
 end
