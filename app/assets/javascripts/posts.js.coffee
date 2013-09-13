@@ -14,3 +14,6 @@ jQuery ->
 				$('.pagination').text("Fetching more posts..")
 				$.getScript(url)
 			$(window).scroll()
+
+  $('#search').autocomplete
+    source: "/search_suggestions"

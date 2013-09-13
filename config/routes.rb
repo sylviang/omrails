@@ -1,4 +1,6 @@
 Omrails::Application.routes.draw do
+  resources :search_suggestions
+
   resources :posts
 
   devise_for :users

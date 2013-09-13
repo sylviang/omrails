@@ -12,6 +12,9 @@ gem 'paperclip', github: 'thoughtbot/paperclip', branch: 'rails-4'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'jquery-ui-rails'
+gem 'rack-mini-profiler'
+gem 'redis'
 
 # Use sqlite3 as the database for Active Record
 group :production do
