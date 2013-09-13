@@ -16,6 +16,7 @@ gem 'jquery-ui-rails'
 gem 'rack-mini-profiler'
 gem 'redis'
 gem 'aws-sdk'
+gem 'figaro'
 
 # Use sqlite3 as the database for Active Record
 group :production do
