@@ -14,13 +14,16 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore other unneeded files.
+database.yml
 doc/
 *.swp
 *~
-.DS_Store
 .project
+.DS_Store
 .idea
-.
+.secret
 
 # Ignore Paperclip uploaded files
 /public/system

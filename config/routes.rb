@@ -1,4 +1,4 @@
-Omrails::Application.routes.draw do
+Superkuku::Application.routes.draw do
   resources :search_suggestions
 
   resources :posts
